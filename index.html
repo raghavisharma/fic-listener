@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fic Me Up has moved</title>
+<script>
+  // Fic Me Up now lives at ficmeup.github.io. Send every page to the same page there.
+  // An old Listen bookmark can't be forwarded (it's tied to this address), so say so instead.
+  (function () {
+    var path = location.pathname.replace(/^\/fic-listener\/?/, '/');
+    var target = 'https://ficmeup.github.io' + path + location.search;
+    if (location.hash === '#import') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('msg').textContent = 'Fic Me Up has moved, so this Listen bookmark no longer works. Open the new address and set up the Listen bookmark again from there.';
+      });
+      window.__target = 'https://ficmeup.github.io/';
+      return;
+    }
+    location.replace(target + location.hash);
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-content: center; gap: 16px; padding: 24px;
+         background: #050505; color: #EFEFF1; font: 17px/1.6 Georgia, serif; text-align: center; }
+  a { color: #EFEFF1; font: 11px/1 ui-monospace, Menlo, monospace; letter-spacing: 0.15em; text-transform: uppercase;
+      border: 1px solid #EFEFF1; padding: 12px 16px; text-decoration: none; justify-self: center; }
+  p { max-width: 36ch; margin: 0; color: #8C8C95; }
+</style>
+</head>
+<body>
+  <p id="msg">Fic Me Up has moved to ficmeup.github.io.</p>
+  <a href="https://ficmeup.github.io/">Open Fic Me Up</a>
+</body>
+</html>
